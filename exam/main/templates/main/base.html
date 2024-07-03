@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+            <img class="LOGO" src="{% static 'img/logo.png'%}" >
+            <p>Нарушениям.Нет</p>
+            </div>
+            <div class="navbar-left">
+                <a href="/">Главная</a>
+                <a href="/about">О проекте</a>
+
+            </div>
+            <div class="navbar-right">
+                {% if user.is_authenticated %}
+                 <a class="nav-item nav-link" href="/statements">Заявления</a>
+                <a class="nav-item nav-link" href="/profile">Профиль</a>
+                <a class="nav-item nav-link" href="/logout">Выход</a>
+                {% else %}
+                <a class="nav-item nav-link" href="/login">Вход</a>
+                <a class="nav-item nav-link" href="/register">Регистрация</a>
+                {% endif %}
+            </div>
+        </nav>
+
+
+{% block content %}{% endblock %}
+</div>
+<footer class="text-center bg-dark">
+    <p>Будь ответственным гражданином!</p>
+    <p>@Нарушениям.Нет</p>
+    <p>2023-2024</p>
+</footer>
+</body>
+</html>

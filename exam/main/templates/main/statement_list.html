@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Заявления
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    {% if statements %}
+    <table class="table">
+        {% for statement in statements %}
+            <div class="qw">
+                <h3>{{ statement.numbers }}</h3>
+                <p>{{ statement.description }}</p>
+                <p>{{ statement.user }}</p>
+                <p>{{ statement.stat }}</p>
+            </div>
+        {% endfor %}
+        {% else %}
+            <p>Нет заявлений</p>
+        {% endif %}
+    </table>
+</div>
+{% endblock %}

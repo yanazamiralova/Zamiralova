@@ -1,0 +1,8 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+
+<p>Наш портал представляет собой информационную систему для помощи полиции по своевременной фиксации нарушений правил дорожного движения.</p>
+<br>
+<input type="button" value="Сформировать заявление" onclick="location.href = '{% url 'create_statements' %}'">
+{% endblock %}
